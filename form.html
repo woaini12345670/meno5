@@ -1,5 +1,5 @@
 <!doctype html>
-
+<html lang="">
 <head>
 <meta charset="utf-8">
 <meta name="description" content>
@@ -117,24 +117,53 @@ your browser</a> to improve your experience.
 function dj(){
  draw(show_num);   
  }
-function sublim(){
-var val=document.getElementById("text").value;  
-            var num = show_num.join("");
-            if(val==''){
-                alert('请输入验证码！');
-            }else if(val == num){
-                
-                
-                window.location.href = 'ney.html'; 
-            }else{
-                alert('验证码错误！\n你输入的是:  '+val+"\n正确的是:  "+num+'\n请重新输入！');
-                document.getElementById("text").value='';
-                draw(show_num);
-            }
+
+
+function sublim() {
+    var val = document.getElementById("verificationValue").value;  
+    var num = show_num.join("");
+    
+    if(val == '') {
+        alert('请输入验证号码！');
+    } else if(val == '52') {
+        if(document.getElementById("text").value == '') {
+            alert('请输入验证码！');
+        } else if(document.getElementById("text").value == num) {
+            window.location.href = 'ney.html'; // 你可以将'file1.html'替换为实际的目标页面
+        } else {
+            alert('验证码错误！\n你输入的是:  '+document.getElementById("text").value+"\n正确的是:  "+num+'\n请重新输入！');
+            document.getElementById("text").value='';
+            draw(show_num);
+        }
+    } else if(val == '53') {
+        if(document.getElementById("text").value == '') {
+            alert('请输入验证码！');
+        } else if(document.getElementById("text").value == num) {
+            window.location.href = 'mjm.jpg'; // 你可以将'file1.html'替换为实际的目标页面
+        } else {
+            alert('验证码错误！\n你输入的是:  '+document.getElementById("text").value+"\n正确的是:  "+num+'\n请重新输入！');
+            document.getElementById("text").value='';
+            draw(show_num);
+        }
+    } 
+	else if(val == '54') {
+        if(document.getElementById("text").value == '') {
+            alert('请输入验证码！');
+        } else if(document.getElementById("text").value == num) {
+            window.location.href = 'pg.jpg'; // 你可以将'file2.html'替换为实际的目标页面
+        } else {
+            alert('验证码错误！\n你输入的是:  '+document.getElementById("text").value+"\n正确的是:  "+num+'\n请重新输入！');
+            document.getElementById("text").value='';
+            draw(show_num);
+        }
+    } else {
+        alert('验证号码不正确！');
+    }
+}
         
        
 		
-          }
+          
 		  
 function draw(show_num) {
         var canvas_width=document.getElementById('canvas').clientWidth;
